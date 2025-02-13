@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { GraduationCap, MessageSquare, StarIcon, Users, Clock, Filter, School, MapPin } from "lucide-react";
+import { GraduationCap, MessageSquare, StarIcon, Users, Clock, Filter, School, MapPin, BookOpen, DollarSign } from "lucide-react";
 
 const mentors = [
   {
@@ -99,6 +99,64 @@ const Index = () => {
                     placeholder="Search universities..."
                     className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
                   />
+                </div>
+
+                {/* Field of Study Filter */}
+                <div className="mb-6">
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <BookOpen className="w-4 h-4" />
+                    Field of Study
+                  </h4>
+                  <select className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/20">
+                    <option value="">All Fields</option>
+                    <option value="computer-science">Computer Science</option>
+                    <option value="engineering">Engineering</option>
+                    <option value="business">Business</option>
+                    <option value="arts">Arts & Humanities</option>
+                    <option value="science">Natural Sciences</option>
+                    <option value="medicine">Medicine</option>
+                    <option value="law">Law</option>
+                  </select>
+                </div>
+
+                {/* Budget Filter */}
+                <div className="mb-6">
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <DollarSign className="w-4 h-4" />
+                    Budget (per hour)
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex gap-3">
+                      <div className="flex-1">
+                        <label className="text-sm text-secondary mb-1 block">Min ($)</label>
+                        <input
+                          type="number"
+                          min="0"
+                          placeholder="0"
+                          className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        />
+                      </div>
+                      <div className="flex-1">
+                        <label className="text-sm text-secondary mb-1 block">Max ($)</label>
+                        <input
+                          type="number"
+                          min="0"
+                          placeholder="100"
+                          className="w-full px-3 py-2 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {[20, 30, 50, 100].map((price) => (
+                        <button
+                          key={price}
+                          className="px-3 py-1 text-sm border border-primary/20 rounded-full hover:bg-primary hover:text-white transition-colors"
+                        >
+                          Under ${price}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 {/* Time Filter */}
