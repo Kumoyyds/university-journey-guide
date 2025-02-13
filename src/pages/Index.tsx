@@ -1,6 +1,5 @@
-
 import { useEffect } from "react";
-import { GraduationCap, MessageSquare, StarIcon, Users, Clock, Filter, School, MapPin, BookOpen, DollarSign } from "lucide-react";
+import { GraduationCap, MessageSquare, StarIcon, Users, Clock, Filter, School, MapPin, BookOpen, DollarSign, Search } from "lucide-react";
 
 const mentors = [
   {
@@ -80,6 +79,18 @@ const Index = () => {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-12 gap-6">
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-8 reveal opacity-0 translate-y-10">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search mentors by name, university, or expertise..."
+                  className="w-full px-4 py-3 pl-12 pr-4 rounded-full border border-border bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 text-base"
+                />
+                <Search className="w-5 h-5 text-muted-foreground absolute left-4 top-1/2 transform -translate-y-1/2" />
+              </div>
+            </div>
+
             {/* Filters Sidebar */}
             <div className="col-span-12 lg:col-span-3">
               <div className="bg-card rounded-xl p-6 shadow-sm sticky top-4">
